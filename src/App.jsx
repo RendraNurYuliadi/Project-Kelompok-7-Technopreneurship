@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'
 import SplashScreen from './components/SplashScreen'
 import LandingPage from './pages/LandingPage'
 import OrderPage from './pages/OrderPage'
+import GeminiChatPage from './pages/GeminiChatPage'
 
 export default function App(){
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
@@ -37,6 +38,10 @@ export default function App(){
             <Route 
               path="/order" 
               element={<OrderPage theme={theme} />} 
+            />
+            <Route 
+              path="/chat" 
+              element={<GeminiChatPage theme={theme} />} 
             />
           </Routes>
         </div>

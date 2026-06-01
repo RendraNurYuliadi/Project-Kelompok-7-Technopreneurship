@@ -5,7 +5,6 @@ const links = ['Home','About','Team','Services','Projects','Technologies','FAQ',
 
 export default function Navbar({ theme, setTheme }){
   const [open,setOpen] = useState(false)
-  const [servicesOpen,setServicesOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('Home')
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
@@ -53,22 +52,7 @@ export default function Navbar({ theme, setTheme }){
             <ul className="flex gap-6 text-sm items-center">
               {links.map(l=> (
                 <li key={l} className="relative">
-                  {l === 'Services' ? (
-                    <>
-                      <button onClick={()=>setServicesOpen(v=>!v)} className={getLinkClass(l)}>{l}</button>
-                      {servicesOpen && (
-                        <div className="absolute mt-3 right-0 glass rounded-xl p-4 w-56 shadow-glass">
-                          <ul className="space-y-2 text-sm text-silver">
-                            <li><a href="#services">Design Services</a></li>
-                            <li><a href="#services">Web Development</a></li>
-                            <li><a href="#services">Data & Scraping</a></li>
-                          </ul>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <a href={`#${l.toLowerCase()}`} className={getLinkClass(l)}>{l}</a>
-                  )}
+                  <a href={`#${l.toLowerCase()}`} className={getLinkClass(l)}>{l}</a>
                 </li>
               ))}
             </ul>

@@ -6,6 +6,25 @@ import rendraPhoto from './OurTeam/Rendra.png'
 import eiPhoto from './OurTeam/Ei.jpeg'
 import wulansPhoto from './OurTeam/Wulans.png'
 
+const scrollbarStyles = `
+  .team-modal::-webkit-scrollbar {
+    width: 8px;
+  }
+  .team-modal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .team-modal::-webkit-scrollbar-thumb {
+    background: #1f2937;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  .team-modal::-webkit-scrollbar-thumb:hover {
+    background: #111827;
+    background-clip: padding-box;
+  }
+`
+
 const members = [
   {
     name:'Amelia', 
@@ -66,6 +85,8 @@ export default function Team({ theme }){
   const [selectedMember, setSelectedMember] = useState(null)
 
   return (
+    <>
+      <style>{scrollbarStyles}</style>
     <section id="team" className="relative overflow-hidden py-20">
       <BackgroundParticles theme={theme} />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -115,7 +136,7 @@ export default function Team({ theme }){
               transition={{duration:0.3}}
               className="fixed inset-0 z-50 flex items-center justify-center px-4"
             >
-              <div className="glass border border-white/10 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+              <div className="glass border border-white/10 rounded-3xl p-8 max-w-md w-full max-h-[58vh] overflow-y-auto shadow-2xl team-modal">
                 {/* Close Button */}
                 <button 
                   onClick={() => setSelectedMember(null)}
@@ -187,5 +208,6 @@ export default function Team({ theme }){
         )}
       </AnimatePresence>
     </section>
+    </>
   )
 }
