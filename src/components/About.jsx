@@ -1,40 +1,53 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
+import AboutImg from './OurTeam/Service/About.jpeg'
 
 export default function About({ theme }){
   return (
     <section id="about" className="relative overflow-hidden py-20">
       <BackgroundParticles theme={theme} />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <motion.h2 initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="text-3xl font-bold">About Digisolve Studio</motion.h2>
-        <motion.p initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.1}} className="mt-4 text-slate-700 dark:text-slate-300 max-w-3xl text-lg">
+        <motion.h2 initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} data-aos="fade-down" className="text-3xl font-bold">About Digisolve Studio</motion.h2>
+        <motion.p initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.1}} data-aos="fade-up" className="mt-4 text-slate-700 dark:text-slate-300 max-w-3xl text-lg">
           Digisolve Studio adalah startup jasa digital yang menggabungkan technopreneurship, inovasi teknologi, dan layanan custom order untuk mendukung UMKM, mahasiswa, dan bisnis kecil.
         </motion.p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className="glass p-8 rounded-3xl shadow-glass border border-white/10 dark:border-slate-700/40">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="material-symbols-outlined text-3xl">assignment</span>
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Overview</h3>
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
+          <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} data-aos="fade-right" className="flex items-start">
+            <div className="glass p-4 rounded-3xl shadow-glass border border-white/10 dark:border-slate-700/40 overflow-hidden w-full">
+              <img src={AboutImg} alt="Digisolve Studio" className="w-full h-auto object-cover rounded-2xl" />
             </div>
-            <ul className="mt-4 space-y-3 text-slate-600 dark:text-slate-300 text-sm">
-              <li>✓ Technopreneurship sebagai landasan untuk produk jasa digital.</li>
-              <li>✓ Solusi kreatif untuk desain, dokumen, website, dan data scraping.</li>
-              <li>✓ Berbasis digital dengan proses cepat, fleksibel, dan efisien.</li>
-            </ul>
           </motion.div>
 
-          <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className="glass p-8 rounded-3xl shadow-glass border border-white/10 dark:border-slate-700/40">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="material-symbols-outlined text-3xl">public</span>
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Local Impact</h3>
+          <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{delay:0.1}} data-aos="fade-left" className="space-y-6">
+            <div className="glass p-8 rounded-3xl shadow-glass border border-white/10 dark:border-slate-700/40">
+              <div className="space-y-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="material-symbols-outlined text-3xl">assignment</span>
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Overview</h3>
+                  </div>
+                  <ul className="mt-4 space-y-3 text-slate-600 dark:text-slate-300 text-sm">
+                    <li>✓ Technopreneurship sebagai landasan untuk produk jasa digital.</li>
+                    <li>✓ Solusi kreatif untuk desain, dokumen, website, dan data scraping.</li>
+                    <li>✓ Berbasis digital dengan proses cepat, fleksibel, dan efisien.</li>
+                  </ul>
+                </div>
+
+                <div className="border-t border-slate-200 dark:border-slate-700 pt-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="material-symbols-outlined text-3xl">public</span>
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Local Impact</h3>
+                  </div>
+                  <ul className="mt-4 space-y-3 text-slate-600 dark:text-slate-300 text-sm">
+                    <li>✓ Mendukung UMKM dan bisnis lokal melalui digitalisasi usaha.</li>
+                    <li>✓ Mengoptimalkan teknologi untuk pemasaran produk lokal.</li>
+                    <li>✓ Solusi digital disesuaikan dengan kebutuhan dan budaya lokal.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <ul className="mt-4 space-y-3 text-slate-600 dark:text-slate-300 text-sm">
-              <li>✓ Mendukung UMKM dan bisnis lokal melalui digitalisasi usaha.</li>
-              <li>✓ Mengoptimalkan teknologi untuk pemasaran produk lokal.</li>
-              <li>✓ Solusi digital disesuaikan dengan kebutuhan dan budaya lokal.</li>
-            </ul>
           </motion.div>
         </div>
 

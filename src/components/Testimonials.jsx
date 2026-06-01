@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
-import localPhoto1 from './OurTeam/Amels.jpeg'
+import localPhoto1 from './OurTeam/Wulans.png'
 
 const data = [
   {name:'Nadia R.', role:'Founder, TechX', text:'Hasilnya cepat, profesional, dan sesuai ekspektasi.', image: localPhoto1},
@@ -45,7 +45,7 @@ export default function Testimonials({ theme }){
     <section id="testimonials" className="relative overflow-hidden py-20">
       <BackgroundParticles />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between" data-aos="fade-down">
           <div>
             <h2 className="text-3xl font-bold">Testimoni</h2>
             <p className="mt-3 text-slate-500 dark:text-slate-400 max-w-xl">Suara klien yang puas dengan hasil desain premium, pengiriman cepat, dan konversi yang meningkat.</p>
@@ -57,6 +57,7 @@ export default function Testimonials({ theme }){
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           className="mt-10 overflow-x-auto no-scrollbar scroll-smooth"
+          data-aos="fade-left"
         >
           <div className="flex gap-6 snap-x snap-mandatory pb-3">
             {[...data, ...data].map((item, index) => (

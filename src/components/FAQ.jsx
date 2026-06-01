@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
 
@@ -11,6 +11,12 @@ const faqs = [
 ]
 
 export default function FAQ({ theme }){
+  const [openIndex, setOpenIndex] = useState(null)
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
     <section id="faq" className="relative overflow-hidden py-20">
       <BackgroundParticles theme={theme} />
@@ -23,14 +29,36 @@ export default function FAQ({ theme }){
         </div>
 
         <div className="mt-6 space-y-3">
-          {faqs.map((f,i)=> (
-            <motion.details key={i} whileTap={{scale:0.99}} className="glass surface p-4 rounded-3xl border border-slate-200/40 shadow-glass">
-              <summary className="cursor-pointer font-medium flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/5 dark:bg-white/10 text-slate-700 dark:text-slate-200">?</span>
-                {f.q}
-              </summary>
-              <p className="mt-3 text-slate-600 dark:text-slate-300">{f.a}</p>
-            </motion.details>
+          {faqs.map((f, i)=> (
+            <motion.div key={i} data-aos="fade-up" data-aos-delay={i*50} className="glass surface p-6 rounded-3xl border border-slate-200/40 shadow-glass overflow-hidden">
+              <button 
+                onClick={() => toggleFAQ(i)}
+                className="w-full flex items-center justify-between cursor-pointer font-medium transition hover:opacity-80"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/5 dark:bg-white/10 text-slate-700 dark:text-slate-200">?</span>
+                  {f.q}
+                </span>
+                <motion.span 
+                  animate={{ rotate: openIndex === i ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="material-symbols-outlined text-slate-400 dark:text-slate-300 flex-shrink-0"
+                >
+                  add
+                </motion.span>
+              </button>
+              
+              {openIndex === i && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                >
+                  <p className="mt-4 text-slate-600 dark:text-slate-300 ml-11">{f.a}</p>
+                </motion.div>
+              )}
+            </motion.div>
           ))}
         </div>
       </div>

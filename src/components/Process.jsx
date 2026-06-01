@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
+import WorkflowImg from './OurTeam/Service/WorkFlow.png'
 
 const steps = [
   {title:'Order & Briefing', detail:'Klien mengirim permintaan, brief, dan referensi layanan digital.'},
@@ -20,9 +21,16 @@ export default function Process({ theme }){
             <p className="mt-2 text-slate-400 max-w-xl">Proses Digisolve Studio dirancang agar setiap project bergerak cepat, transparan, dan mudah diikuti oleh klien.</p>
           </div>
         </div>
+
+        <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}} data-aos="fade-up" className="mt-8 mb-12">
+          <div className="glass p-4 rounded-3xl border border-white/10 shadow-glass overflow-hidden">
+            <img src={WorkflowImg} alt="Workflow Process" className="w-full h-auto object-contain rounded-2xl" />
+          </div>
+        </motion.div>
+
         <div className="mt-8 grid gap-6 md:grid-cols-4">
           {steps.map((step, idx) => (
-            <motion.div key={step.title} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:idx*0.08}} className="glass p-6 rounded-3xl border border-white/10 shadow-glass">
+            <motion.div key={step.title} data-aos="fade-up" data-aos-delay={idx*100} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:idx*0.08}} className="glass p-6 rounded-3xl border border-white/10 shadow-glass">
               <div className="text-sm uppercase tracking-[0.25em] text-slate-400">Step {idx+1}</div>
               <h3 className="mt-4 font-semibold text-xl">{step.title}</h3>
               <p className="mt-3 text-slate-300 text-sm">{step.detail}</p>

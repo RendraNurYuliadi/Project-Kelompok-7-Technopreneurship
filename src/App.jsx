@@ -1,24 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import BusinessModelCanvas from './components/BusinessModelCanvas'
-import SWOT from './components/SWOT'
-import Process from './components/Process'
-import SampleProducts from './components/SampleProducts'
-import Stats from './components/Stats'
-import Projects from './components/Projects'
-import Testimonials from './components/Testimonials'
-import Technologies from './components/Technologies'
-import Team from './components/Team'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import FloatingButtons from './components/FloatingButtons'
-import AudioPlayer from './components/AudioPlayer'
-import CursorFollower from './components/CursorFollower'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import SplashScreen from './components/SplashScreen'
+import LandingPage from './pages/LandingPage'
+import OrderPage from './pages/OrderPage'
 
 export default function App(){
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
@@ -29,32 +15,32 @@ export default function App(){
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false,
+      offset: 100
+    })
+  }, [])
+
   return (
-    <>
-      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
-      <div id="top" className="relative min-h-screen text-slate-900 bg-white dark:text-white dark:bg-black">
-        <Navbar theme={theme} setTheme={setTheme} />
-        <main className="overflow-x-hidden relative z-10">
-          <Hero theme={theme} />
-          <About theme={theme} />
-          <Team theme={theme} />
-          <Services theme={theme} />
-          <BusinessModelCanvas theme={theme} />
-          <SWOT theme={theme} />
-          <SampleProducts theme={theme} />
-          <Process theme={theme} />
-          <Stats theme={theme} />
-          <Projects theme={theme} />
-          <Testimonials theme={theme} />
-          <Technologies theme={theme} />
-          <FAQ theme={theme} />
-          <Contact theme={theme} />
-        </main>
-        <Footer />
-        <FloatingButtons />
-        <AudioPlayer showSplash={showSplash} />
-        <CursorFollower />
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
+        <div id="top" className="relative min-h-screen text-slate-900 bg-white dark:text-white dark:bg-black">
+          <Routes>
+            <Route 
+              path="/" 
+              element={<LandingPage theme={theme} setTheme={setTheme} showSplash={showSplash} />} 
+            />
+            <Route 
+              path="/order" 
+              element={<OrderPage theme={theme} />} 
+            />
+          </Routes>
+        </div>
+      </>
+    </BrowserRouter>
   )
 }

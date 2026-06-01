@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const links = ['Home','About','Services','Projects','Technologies','Team','FAQ','Contact']
+const links = ['Home','About','Team','Services','Projects','Technologies','FAQ','Contact']
 
 export default function Navbar({ theme, setTheme }){
   const [open,setOpen] = useState(false)

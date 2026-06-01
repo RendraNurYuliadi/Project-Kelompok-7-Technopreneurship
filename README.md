@@ -16,6 +16,21 @@ npm run dev
 
 This is a starter scaffold for the Digisolve Studio single-page landing. Components are located in `src/components` and designed to be extended.
 
+## 🔔 REMINDER: Form Backend Checklist
+
+**⚠️ CHECK EVERY MONTH:**
+- [ ] Verify Getform endpoint working: `https://getform.io/f/lb4s0n3vzd5`
+- [ ] Confirm all form fields using Forminit naming (`fi-*` prefix):
+  - Contact: `fi-sender-fullName`, `fi-sender-email`, `fi-text-whatsapp`, `fi-text-message`
+  - Newsletter: `fi-sender-email`
+- [ ] Check hidden field `fi-text-form-type` exists in both forms (Contact & Newsletter)
+- [ ] Test form submissions in both Contact & Newsletter components
+- [ ] Verify submissions appear in Getform dashboard with correct form-type values
+
+**Files to Check:**
+- `src/components/Contact.jsx` — Contact form
+- `src/components/Newsletter.jsx` — Newsletter subscription
+
 ## Repository & Vercel Deployment
 
 1. Initialize git locally:

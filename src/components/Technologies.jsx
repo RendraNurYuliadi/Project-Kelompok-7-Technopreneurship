@@ -10,8 +10,8 @@ const tech = [
   {name:'TailwindCSS', icon:'dashboard_customize'},
   {name:'Figma', icon:'brush'},
   {name:'Canva', icon:'content_cut'},
-  {name:'AI Automation', icon:'smart_toy'},
-  {name:'Data Scraping', icon:'analytics'}
+  {name:'Google AI Studio', icon:'smart_toy'},
+  {name:'Python', icon:'analytics'}
 ]
 
 export default function Technologies({ theme }){
@@ -27,10 +27,12 @@ export default function Technologies({ theme }){
         </div>
 
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {tech.map((item) => (
+          {tech.map((item, idx) => (
             <motion.div
               key={item.name}
               whileHover={{ y: -6 }}
+              data-aos="fade-up"
+              data-aos-delay={idx*50}
               className="glass surface p-4 rounded-3xl border border-slate-200/50 shadow-glass"
             >
               <div className="flex items-center gap-3">

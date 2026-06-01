@@ -39,7 +39,7 @@ export default function Stats(){
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, index) => (
-            <motion.div key={s.label} whileInView={{scale:1}} initial={{scale:0.95,opacity:0}} whileHover={{scale:1.02}} className="glass p-6 rounded-2xl text-center">
+            <motion.div key={s.label} whileInView={{scale:1}} initial={{scale:0.95,opacity:0}} whileHover={{scale:1.02}} data-aos="zoom-in" data-aos-delay={index*100} className="glass p-6 rounded-2xl text-center">
               <div className="text-3xl font-bold">{counts[index]}{s.plus ? '+' : ''}</div>
               <div className="text-silver">{s.label}</div>
             </motion.div>

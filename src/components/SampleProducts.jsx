@@ -24,7 +24,7 @@ export default function SampleProducts({ theme }){
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {samples.map((item, idx) => (
-            <motion.a key={item.title} href={item.url} target="_blank" rel="noreferrer" initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:idx*0.08}} className="glass p-6 rounded-3xl border border-white/10 shadow-glass hover:-translate-y-2 hover:border-white/20 transition">
+            <motion.a key={item.title} href={item.url} target="_blank" rel="noreferrer" initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:idx*0.08}} data-aos="fade-up" data-aos-delay={idx*100} className="glass p-6 rounded-3xl border border-white/10 shadow-glass hover:-translate-y-2 hover:border-white/20 transition">
               <div className="text-slate-400 text-xs uppercase tracking-[0.3em]">{item.category}</div>
               <h3 className="mt-3 text-xl font-semibold">{item.title}</h3>
               <p className="mt-4 text-slate-300 text-sm">Lihat prototype Figma dan desain konsep untuk startup project.</p>
