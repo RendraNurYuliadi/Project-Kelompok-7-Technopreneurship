@@ -9,6 +9,25 @@ import DekingImg from './OurTeam/Service/Deking.png'
 import SDIImg from './OurTeam/Service/SDI.png'
 import ChitaTravelImg from './OurTeam/Service/NusaTravel.png'
 
+const projectScrollbarStyles = `
+  .project-modal::-webkit-scrollbar {
+    width: 8px;
+  }
+  .project-modal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .project-modal::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  .project-modal::-webkit-scrollbar-thumb:hover {
+    background: #0f172a;
+    background-clip: padding-box;
+  }
+`
+
 const sample = [
   {title:'Rog Store', tag:'ecommerce', img:RogStoreImg, services:['Web Development'], description:'E-commerce shop experience dengan tampilan premium.', figmaUrl:'https://www.figma.com/design/ClUsiVC866SvyeGmw2av7j/Rog-Store?node-id=23-470&t=hxQsOgHjGwtf8mCO-1'},
   {title:'Tahu fashion', tag:'ecommerce', img:FashionStoreImg, services:['Design Services','Web Development'], description:'Website fashion modern untuk branding digital.', figmaUrl:'https://www.figma.com/design/NbQ0wHyB1KMfft4zUrXsYq/Project-Akhir-Tahungoding?node-id=1-96&t=UN4SDYyHSvkpQSY4-1', websiteUrl:'https://tahu-fashion.vercel.app/'},
@@ -27,8 +46,10 @@ export default function Projects(){
   const list = sample.filter(p=> filter==='all' || p.tag===filter)
 
   return (
-    <section id="projects" className="relative overflow-hidden py-12">
-      <BackgroundParticles />
+    <>
+      <style>{projectScrollbarStyles}</style>
+      <section id="projects" className="relative overflow-hidden py-12">
+        <BackgroundParticles />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
@@ -94,7 +115,7 @@ export default function Projects(){
                 transition={{ duration: 0.3 }}
                 className="fixed inset-0 z-50 flex items-center justify-center px-4"
               >
-                <div className="glass rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10 shadow-2xl">
+                <div className="project-modal glass rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[70vh] overflow-y-auto border border-white/10 shadow-2xl">
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <div className="text-xs uppercase tracking-[0.3em] text-slate-400">{selectedProject.tag}</div>
@@ -108,7 +129,7 @@ export default function Projects(){
                     </button>
                   </div>
 
-                  <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-96 object-cover rounded-2xl mb-6" />
+                  <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-72 sm:h-96 object-cover rounded-2xl mb-6" />
 
                   <p className="text-slate-300 text-base mb-6">{selectedProject.description}</p>
 
@@ -158,6 +179,7 @@ export default function Projects(){
         </AnimatePresence>
       </div>
     </section>
+    </>
   )
 }
 
