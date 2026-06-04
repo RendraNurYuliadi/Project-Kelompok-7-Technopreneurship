@@ -86,17 +86,17 @@ export default function Newsletter({ theme }){
               transition={{delay:0.4}}
               className={`mt-6 flex flex-col sm:flex-row justify-center gap-4 text-sm ${theme === 'dark' ? 'text-slate-400' : 'text-slate-600'}`}
             >
-              <div className="flex items-center gap-2">
-                <span className={`material-symbols-outlined ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'}`}>check_circle</span>
-                <span>Promo eksklusif</span>
+              <div className="flex items-center gap-2 text-emerald-500">
+                <span className="material-symbols-outlined">check_circle</span>
+                <span className={theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}>Promo eksklusif</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className={`material-symbols-outlined ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'}`}>check_circle</span>
-                <span>Tips & insight digital</span>
+              <div className="flex items-center gap-2 text-emerald-500">
+                <span className="material-symbols-outlined">check_circle</span>
+                <span className={theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}>Tips & insight digital</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className={`material-symbols-outlined ${theme === 'dark' ? 'text-slate-500' : 'text-slate-500'}`}>check_circle</span>
-                <span>Update portfolio</span>
+              <div className="flex items-center gap-2 text-emerald-500">
+                <span className="material-symbols-outlined">check_circle</span>
+                <span className={theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}>Update portfolio</span>
               </div>
             </motion.div>
 

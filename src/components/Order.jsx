@@ -100,33 +100,12 @@ export default function Order({ theme }) {
       body: formDataForGetform
     })
       .then(() => {
-        // Generate WhatsApp message
-        const message = `*Pesanan Jasa Digisolve Studio*
-
-Nama: ${formData.nama}
-Email: ${formData.email}
-WhatsApp: ${formData.whatsapp}
-
-*Layanan yang Dipesan:*
-${selectedList}
-
-*Detail Proyek:*
-${formData.detail || 'Tidak ada detail tambahan'}
-
-_Terima kasih! Admin akan segera menghubungi Anda._`
-
-        // Encode message and open WhatsApp
-        const whatsappNumber = '6281292731092'
-        const encodedMessage = encodeURIComponent(message)
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
-
         // Reset form
         setFormData({ nama: '', email: '', whatsapp: '', detail: '' })
         setSelectedServices({})
         setLoading(false)
 
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, '_blank')
+        alert('Pesan berhasil dikirim. Form ini akan diproses oleh Formini dan admin akan menghubungi Anda.')
       })
       .catch(err => {
         console.error('Error:', err)
@@ -142,7 +121,7 @@ _Terima kasih! Admin akan segera menghubungi Anda._`
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-12" data-aos="fade-down">
           <div>
             <h2 className="text-3xl font-bold">Order Jasa</h2>
-            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl">Pilih layanan yang Anda butuhkan dan isi formulir untuk memulai. Admin akan menghubungi Anda melalui WhatsApp untuk konfirmasi dan detil harga.</p>
+            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl">Pilih layanan yang Anda butuhkan dan isi formulir untuk memulai. Admin akan menghubungi Anda setelah formulir dikirim.</p>
           </div>
         </div>
 
@@ -236,7 +215,7 @@ _Terima kasih! Admin akan segera menghubungi Anda._`
           {/* Selected Services Summary */}
           {Object.values(selectedServices).some(v => v) && (
             <div className="glass surface p-6 rounded-3xl border border-slate-200/40 shadow-glass" data-aos="fade-right">
-              <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">📋 Layanan Terpilih</h3>
+              <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">Layanan Terpilih</h3>
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {Object.entries(selectedServices)
                   .filter(([_, selected]) => selected)
@@ -320,12 +299,12 @@ _Terima kasih! Admin akan segera menghubungi Anda._`
               {loading ? (
                 <>
                   <span className="material-symbols-outlined animate-spin text-sm">hourglass_top</span>
-                  Membuka WhatsApp...
+                  Mengirim...
                 </>
               ) : (
                 <>
                   <span className="material-symbols-outlined text-sm">send</span>
-                  Pesan via WhatsApp
+                  Kirim Pesan
                 </>
               )}
             </motion.button>

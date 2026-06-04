@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ProductCarousel from '../components/ProductCarousel'
 import FloatingButtons from '../components/FloatingButtons'
-import AudioPlayer from '../components/AudioPlayer'
 import logo from '../components/OurTeam/Icon2.png'
 import CanvaImg from '../components/OurTeam/Service/Canva.png'
 import InstagramImg from '../components/OurTeam/Service/Instagram Feed Design.png'
@@ -178,7 +177,6 @@ export default function ProductsPage({ theme }) {
         </div>
       </main>
       <FloatingButtons />
-      <AudioPlayer showSplash={false} />
     </div>
   )
 }

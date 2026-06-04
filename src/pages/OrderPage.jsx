@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Order from '../components/Order'
 import FloatingButtons from '../components/FloatingButtons'
-import AudioPlayer from '../components/AudioPlayer'
 import logo from '../components/OurTeam/Icon2.png'
 
 export default function OrderPage({ theme }) {
@@ -33,7 +32,6 @@ export default function OrderPage({ theme }) {
         <Order theme={theme} />
       </main>
       <FloatingButtons />
-      <AudioPlayer showSplash={false} />
     </div>
   )
 }

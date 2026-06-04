@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import SplashScreen from './components/SplashScreen'
+import AudioPlayer from './components/AudioPlayer'
 import LandingPage from './pages/LandingPage'
 import OrderPage from './pages/OrderPage'
 import ProductsPage from './pages/ProductsPage'
@@ -50,6 +51,7 @@ export default function App(){
               element={<GeminiChatPage theme={theme} />} 
             />
           </Routes>
+          <AudioPlayer showSplash={showSplash} />
         </div>
       </>
     </BrowserRouter>

@@ -60,7 +60,7 @@ export default function Services({ theme }){
                 {service.items.map(item => <li key={item} className="flex items-center gap-3"><span className="text-white">•</span>{item}</li>)}
               </ul>
               <Link to={service.ctaLink} className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-black font-semibold hover:bg-slate-100 transition">
-                Explore Product
+                Explore Service
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
             </motion.div>

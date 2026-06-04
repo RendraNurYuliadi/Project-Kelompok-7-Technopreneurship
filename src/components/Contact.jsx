@@ -18,10 +18,10 @@ export default function Contact({ theme }){
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between" data-aos="fade-down">
           <div>
             <h2 className="text-3xl font-bold">Contact</h2>
-            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-xl">Hubungi kami untuk custom order desain, website, atau layanan data. Email: rendra.education@gmail.com</p>
+            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-xl">Hubungi kami untuk custom order desain, website, atau layanan data. Email: technopreneurshipdigisolvestud@gmail.com</p>
           </div>
           <div className="text-sm text-slate-700 dark:text-slate-300">
-            WhatsApp: <a href="https://wa.me/6281292731092" target="_blank" rel="noreferrer" className="underline">081292731092</a>
+            Customer Support WhatsApp: <a href="https://wa.me/6281952004447" target="_blank" rel="noreferrer" className="underline">081952004447</a>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export default function Contact({ theme }){
                 </div>
                 <div>
                   <div className="font-semibold text-slate-900 dark:text-white">Email</div>
-                  <div className="mt-1 text-slate-600 dark:text-slate-300">rendra.education@gmail.com</div>
+                  <div className="mt-1 text-slate-600 dark:text-slate-300">technopreneurshipdigisolvestud@gmail.com</div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -42,11 +42,11 @@ export default function Contact({ theme }){
                   <span className="material-symbols-outlined">chat</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900 dark:text-white">WhatsApp</div>
-                  <div className="mt-1 text-slate-600 dark:text-slate-300">081292731092</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">Customer Support</div>
+                  <div className="mt-1 text-slate-600 dark:text-slate-300">081952004447</div>
                 </div>
               </div>
-              <p className="text-slate-500 dark:text-slate-400">Gunakan form di samping atau kirim langsung ke WhatsApp untuk request desain, website, atau layanan data.</p>
+              <p className="text-slate-500 dark:text-slate-400">Silakan kirim pesan WhatsApp ke customer support untuk bantuan cepat, konfirmasi order, atau pertanyaan layanan Digisolve Studio.</p>
             </div>
           </div>
 

@@ -9,6 +9,7 @@ import Process from '../components/Process'
 import Stats from '../components/Stats'
 import Projects from '../components/Projects'
 import Testimonials from '../components/Testimonials'
+import WhyChooseUs from '../components/WhyChooseUs'
 import Technologies from '../components/Technologies'
 import Team from '../components/Team'
 import FAQ from '../components/FAQ'
@@ -16,7 +17,6 @@ import Newsletter from '../components/Newsletter'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import FloatingButtons from '../components/FloatingButtons'
-import AudioPlayer from '../components/AudioPlayer'
 import CursorFollower from '../components/CursorFollower'
 
 export default function LandingPage({ theme, setTheme, showSplash }) {
@@ -33,7 +33,7 @@ export default function LandingPage({ theme, setTheme, showSplash }) {
         <Process theme={theme} />
         <Stats theme={theme} />
         <Projects theme={theme} />
-        <Testimonials theme={theme} />
+        <WhyChooseUs theme={theme} />
         <Technologies theme={theme} />
         <FAQ theme={theme} />
         <Newsletter theme={theme} />
@@ -41,7 +41,6 @@ export default function LandingPage({ theme, setTheme, showSplash }) {
       </main>
       <Footer />
       <FloatingButtons />
-      <AudioPlayer showSplash={showSplash} />
       <CursorFollower />
     </>
   )

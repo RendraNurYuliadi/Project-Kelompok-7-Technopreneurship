@@ -5,11 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 export default function ProductCarousel({ products }) {
   const [current, setCurrent] = useState(0)
   const [activeProduct, setActiveProduct] = useState(null)
+  const [itemsPerView, setItemsPerView] = useState(3)
 
   const next = () => setCurrent((current + 1) % products.length)
   const prev = () => setCurrent((current - 1 + products.length) % products.length)
 
-  const itemsPerView = 3
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      setItemsPerView(window.innerWidth < 768 ? 1 : 3)
+    }
+    updateItemsPerView()
+    window.addEventListener('resize', updateItemsPerView)
+    return () => window.removeEventListener('resize', updateItemsPerView)
+  }, [])
 
   const visibleProducts = []
   for (let i = 0; i < itemsPerView; i++) {
@@ -36,17 +44,32 @@ export default function ProductCarousel({ products }) {
 
   return (
     <div className="relative w-full">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {visibleProducts.map((product, idx) => (
-          <motion.div
-            key={`${current}-${idx}`}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.4 }}
-            onClick={() => setActiveProduct(product)}
-            className="glass cursor-pointer rounded-[2.5rem] border border-white/10 shadow-glass overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          >
+      <div className="relative">
+        <button
+          onClick={prev}
+          className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black w-12 h-12 flex items-center justify-center text-white shadow-lg transition hover:bg-black/90"
+          aria-label="Previous"
+        >
+          <span className="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black w-12 h-12 flex items-center justify-center text-white shadow-lg transition hover:bg-black/90"
+          aria-label="Next"
+        >
+          <span className="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {visibleProducts.map((product, idx) => (
+            <motion.div
+              key={`${current}-${idx}`}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.4 }}
+              onClick={() => setActiveProduct(product)}
+              className="glass cursor-pointer rounded-[2.5rem] border border-white/10 shadow-glass overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
             <div className="relative h-64 overflow-hidden bg-slate-1000">
               {product.image ? (
                 <img
@@ -90,36 +113,6 @@ export default function ProductCarousel({ products }) {
           </motion.div>
         ))}
       </div>
-
-      <div className="mt-8 flex items-center justify-center gap-4">
-        <button
-          onClick={prev}
-          className="p-3 rounded-full glass border border-white/10 hover:bg-white/10 transition"
-          aria-label="Previous"
-        >
-          <span className="material-symbols-outlined">chevron_left</span>
-        </button>
-
-        <div className="flex gap-2">
-          {products.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrent(idx)}
-              className={`h-2 rounded-full transition ${
-                idx === current ? 'w-6 bg-white' : 'w-2 bg-white/40'
-              }`}
-              aria-label={`Go to product ${idx + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={next}
-          className="p-3 rounded-full glass border border-white/10 hover:bg-white/10 transition"
-          aria-label="Next"
-        >
-          <span className="material-symbols-outlined">chevron_right</span>
-        </button>
       </div>
 
       <style>{`

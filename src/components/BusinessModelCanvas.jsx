@@ -101,16 +101,16 @@ export default function BusinessModelCanvas({ theme }){
                 animate={{opacity:1}}
                 exit={{opacity:0}}
                 onClick={() => setSelectedItem(null)}
-                className="fixed inset-0 bg-black/50 z-40"
+                className="fixed inset-0 bg-black/50 z-[99998] pointer-events-auto"
               />
               <motion.div 
                 initial={{opacity:0,scale:0.9,y:20}}
                 animate={{opacity:1,scale:1,y:0}}
                 exit={{opacity:0,scale:0.9,y:20}}
                 transition={{duration:0.3}}
-                className="fixed inset-0 z-50 flex items-center justify-center px-4"
+                className="fixed inset-0 z-[99999] flex items-center justify-center px-4"
               >
-                <div className="glass border border-white/10 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div className="relative glass border border-white/10 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
                   {/* Close Button */}
                   <button 
                     onClick={() => setSelectedItem(null)}
