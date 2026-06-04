@@ -1,6 +1,19 @@
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
+import CanvaImg from './OurTeam/Service/Canva.png'
+import InstagramImg from './OurTeam/Service/Instagram Feed Design.png'
+import DesignImg from './OurTeam/Service/Thubnail YTB.png'
+import CVPortfolioImg from './OurTeam/Service/CV  Portofolio.png'
+import FigmaImg from './OurTeam/Service/Figma Design.png'
+import CompanyProfileImg from './OurTeam/Service/Company Profile.png'
+import LandingPageImg from './OurTeam/Service/Landing Page Web.png'
+import PortfolioSiteImg from './OurTeam/Service/Portofolio Site Web.png'
+import EventWebImg from './OurTeam/Service/Event Web.png'
+import InvitationWebImg from './OurTeam/Service/Invitation Web.png'
+import WebScrapImg from './OurTeam/Service/Web Scrap.png'
+import ECommerceImg from './OurTeam/Service/E-Commers Data Scrap.png'
+import SurveyImg from './OurTeam/Service/Survei Automation - G Form.png'
 
 export default function Order({ theme }) {
   const [formData, setFormData] = useState({
@@ -12,27 +25,26 @@ export default function Order({ theme }) {
 
   const [selectedServices, setSelectedServices] = useState({})
   const [loading, setLoading] = useState(false)
-  const [expandedCategory, setExpandedCategory] = useState(null)
 
   const services = {
     'Design Services': [
-      'Poster Canva',
-      'Banner Instagram / event',
-      'Thumbnail YouTube',
-      'CV / portofolio',
-      'Figma product design'
+      { name: 'Poster Canva', image: CanvaImg, oldPrice: 'Rp40.000/desain', price: 'Rp30.000/desain' },
+      { name: 'Banner Instagram / event', image: InstagramImg, oldPrice: 'Rp35.000/post', price: 'Rp25.000/post' },
+      { name: 'Thumbnail YouTube', image: DesignImg, oldPrice: 'Rp35.000/desain', price: 'Rp25.000/desain' },
+      { name: 'CV / portofolio', image: CVPortfolioImg, oldPrice: 'Rp75.000/file', price: 'Rp50.000/file' },
+      { name: 'Figma product design', image: FigmaImg, oldPrice: 'Rp70.000/page', price: 'Rp50.000/page' }
     ],
     'Web Development': [
-      'Website portfolio',
-      'Website undangan',
-      'Landing page event',
-      'Profil usaha kecil / Company Profile'
+      { name: 'Website portfolio', image: PortfolioSiteImg, oldPrice: 'Rp450.000/website', price: 'Rp350.000/website' },
+      { name: 'Website undangan', image: InvitationWebImg, oldPrice: 'Rp380.000/website', price: 'Rp300.000/website' },
+      { name: 'Landing page event', image: LandingPageImg, oldPrice: 'Rp400.000/website', price: 'Rp300.000/website' },
+      { name: 'Profil usaha kecil / Company Profile', image: CompanyProfileImg, oldPrice: 'Rp650.000/website', price: 'Rp500.000/website' }
     ],
     'Data & Scraping': [
-      'Data scraping e-commerce',
-      'Scraping website/katalog',
-      'Pengumpulan data riset',
-      'Survey respondent service'
+      { name: 'Data scraping e-commerce', image: ECommerceImg, oldPrice: 'Rp80.000/100 produk', price: 'Rp60.000/100 produk' },
+      { name: 'Scraping website/katalog', image: WebScrapImg, oldPrice: 'Rp75.000/100 data', price: 'Rp50.000/100 data' },
+      { name: 'Pengumpulan data riset', image: WebScrapImg, oldPrice: 'Rp120.000/project', price: 'Rp100.000/project' },
+      { name: 'Survey respondent service', image: SurveyImg, oldPrice: 'Rp150.000/setup', price: 'Rp100.000/setup' }
     ]
   }
 
@@ -41,8 +53,8 @@ export default function Order({ theme }) {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const toggleService = (category, service) => {
-    const key = `${category}-${service}`
+  const toggleService = (category, serviceName) => {
+    const key = `${category}::${serviceName}`
     setSelectedServices(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -68,7 +80,7 @@ export default function Order({ theme }) {
     const selectedList = Object.entries(selectedServices)
       .filter(([_, selected]) => selected)
       .map(([key, _]) => {
-        const [category, service] = key.split('-')
+        const [category, service] = key.split('::')
         return `• ${service} (${category})`
       })
       .join('\n')
@@ -123,103 +135,133 @@ _Terima kasih! Admin akan segera menghubungi Anda._`
       })
   }
 
-  const categoryVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: { opacity: 1, height: 'auto', transition: { duration: 0.3 } },
-    exit: { opacity: 0, height: 0, transition: { duration: 0.3 } }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0 }
-  }
-
   return (
     <section id="order" className="relative overflow-hidden py-20">
       <BackgroundParticles />
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between" data-aos="fade-down">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-12" data-aos="fade-down">
           <div>
             <h2 className="text-3xl font-bold">Order Jasa</h2>
-            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-xl">Pesan layanan desain, web development, atau data scraping. Harga akan dikonfirmasi oleh admin via WhatsApp.</p>
+            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl">Pilih layanan yang Anda butuhkan dan isi formulir untuk memulai. Admin akan menghubungi Anda melalui WhatsApp untuk konfirmasi dan detil harga.</p>
           </div>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-          {/* Services Selection */}
-          <div className="glass surface p-6 rounded-3xl border border-slate-200/40 shadow-glass" data-aos="fade-right">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">Pilih Layanan</h3>
-            <div className="space-y-3">
-              {Object.entries(services).map(([category, items]) => (
-                <div key={category}>
-                  <motion.button
-                    onClick={() => setExpandedCategory(expandedCategory === category ? null : category)}
-                    className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors"
-                    whileHover={{ x: 4 }}
-                  >
-                    <span className="font-medium text-slate-900 dark:text-white">{category}</span>
-                    <span className="material-symbols-outlined text-slate-500 dark:text-slate-400">
-                      {expandedCategory === category ? 'expand_less' : 'expand_more'}
-                    </span>
-                  </motion.button>
+        {/* Services Selection - Card Grid */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Pilih Layanan</h3>
+          {Object.entries(services).map(([category, items]) => (
+            <div key={category} className="mb-10">
+              <h4 className="text-lg font-semibold mb-4 text-slate-700 dark:text-slate-300">{category}</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {items.map((serviceItem) => {
+                  const service = serviceItem.name
+                  const serviceKey = `${category}::${service}`
+                  const isSelected = selectedServices[serviceKey]
+                  return (
+                    <motion.div
+                      key={serviceKey}
+                      whileHover={{ y: -4 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => toggleService(category, service)}
+                      className={`relative overflow-hidden rounded-2xl cursor-pointer border-2 transition-all duration-300 group ${
+                        isSelected
+                          ? 'glass border-white/30 bg-white/10 shadow-lg'
+                          : 'glass border-white/10 hover:border-white/20 hover:shadow-md'
+                      }`}
+                    >
+                      {/* Image Section */}
+                      <div className="relative h-58 overflow-hidden bg-slate-900">
+                        {serviceItem.image ? (
+                          <img
+                            src={serviceItem.image}
+                            alt={service}
+                            className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center text-slate-400">
+                            <span className="material-symbols-outlined text-3xl">image</span>
+                          </div>
+                        )}
 
-                  <AnimatePresence>
-                    {expandedCategory === category && (
-                      <motion.div
-                        variants={categoryVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        className="overflow-hidden"
-                      >
-                        <div className="mt-2 ml-2 space-y-2 border-l-2 border-slate-300 dark:border-slate-600 pl-3">
-                          {items.map((service, idx) => (
-                            <motion.label
-                              key={service}
-                              variants={itemVariants}
-                              initial="hidden"
-                              animate="visible"
-                              transition={{ delay: idx * 0.05 }}
-                              className="flex items-center gap-2 cursor-pointer group"
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedServices[`${category}-${service}`] || false}
-                                onChange={() => toggleService(category, service)}
-                                className="w-4 h-4 rounded cursor-pointer"
-                              />
-                              <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
-                                {service}
+                        <div className="absolute left-4 top-4 rounded-full bg-slate-950/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
+                          Layanan
+                        </div>
+
+                        {serviceItem.price && (
+                          <div className="absolute right-4 top-4 flex flex-col items-end gap-2">
+                            {serviceItem.oldPrice && (
+                              <span className="rounded-full bg-red-500 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-white line-through shadow-sm">
+                                {serviceItem.oldPrice}
                               </span>
-                            </motion.label>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
+                            )}
+                            <span className="rounded-full bg-emerald-500 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-white shadow-sm">
+                              {serviceItem.price}
+                            </span>
+                          </div>
+                        )}
+                        {isSelected && (
+                          <div className="absolute inset-0 bg-white/20 flex items-center justify-center">
+                            <span className="material-symbols-outlined text-white text-3xl">check_circle</span>
+                          </div>
+                        )}
+                      </div>
 
-            {/* Selected Services Display */}
-            {Object.values(selectedServices).some(v => v) && (
-              <div className="mt-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
-                <p className="text-sm font-medium text-slate-900 dark:text-white mb-2">Layanan Terpilih:</p>
-                <div className="space-y-1">
-                  {Object.entries(selectedServices)
-                    .filter(([_, selected]) => selected)
-                    .map(([key, _]) => {
-                      const [category, service] = key.split('-')
-                      return (
-                        <div key={key} className="text-sm text-slate-700 dark:text-slate-300">
-                          • {service}
+                      {/* Content Section */}
+                      <div className="p-5">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1">
+                            <h5 className="font-semibold text-slate-900 dark:text-white text-sm leading-tight">{service}</h5>
+                          </div>
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+                            isSelected
+                              ? 'bg-white/80 border-white/80'
+                              : 'border-white/40'
+                          }`}>
+                            {isSelected && (
+                              <span className="material-symbols-outlined text-xs text-slate-900">check</span>
+                            )}
+                          </div>
                         </div>
-                      )
-                    })}
-                </div>
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
-            )}
-          </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Summary and Form */}
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+          {/* Selected Services Summary */}
+          {Object.values(selectedServices).some(v => v) && (
+            <div className="glass surface p-6 rounded-3xl border border-slate-200/40 shadow-glass" data-aos="fade-right">
+              <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-white">📋 Layanan Terpilih</h3>
+              <div className="space-y-2 max-h-96 overflow-y-auto">
+                {Object.entries(selectedServices)
+                  .filter(([_, selected]) => selected)
+                  .map(([key, _]) => {
+                    const [category, service] = key.split('::')
+                    return (
+                      <div key={key} className="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-700/50">
+                        <div>
+                          <p className="text-sm font-medium text-slate-900 dark:text-white">{service}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{category}</p>
+                        </div>
+                        <motion.button
+                          type="button"
+                          whileHover={{ scale: 1.1 }}
+                          onClick={() => toggleService(category, service)}
+                          className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                        >
+                          <span className="material-symbols-outlined text-sm">close</span>
+                        </motion.button>
+                      </div>
+                    )
+                  })}
+              </div>
+            </div>
+          )}
 
           {/* Order Form */}
           <form onSubmit={handleSubmit} className="glass surface p-6 rounded-3xl border border-slate-200/40 shadow-glass grid gap-4" data-aos="fade-left">

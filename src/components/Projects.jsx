@@ -24,7 +24,7 @@ export default function Projects(){
   const list = sample.filter(p=> filter==='all' || p.tag===filter)
 
   return (
-    <section id="projects" className="relative overflow-hidden py-20">
+    <section id="projects" className="relative overflow-hidden py-12">
       <BackgroundParticles />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -41,7 +41,7 @@ export default function Projects(){
           </div>
         </div>
 
-        <motion.div layout className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div layout className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           <AnimatePresence>
             {list.map((p, idx)=> (
               <motion.div key={p.title} layout initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} exit={{opacity:0,y:20}} transition={{duration:0.35,delay:idx * 0.05}} data-aos="fade-up" className="rounded-[1.75rem] overflow-hidden glass shadow-glass border border-white/10 group">

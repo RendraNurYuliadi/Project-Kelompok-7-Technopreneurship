@@ -5,9 +5,11 @@ import 'aos/dist/aos.css'
 import SplashScreen from './components/SplashScreen'
 import LandingPage from './pages/LandingPage'
 import OrderPage from './pages/OrderPage'
+import ProductsPage from './pages/ProductsPage'
 import GeminiChatPage from './pages/GeminiChatPage'
 
 export default function App(){
+
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
   const [showSplash, setShowSplash] = useState(true)
 
@@ -38,6 +40,10 @@ export default function App(){
             <Route 
               path="/order" 
               element={<OrderPage theme={theme} />} 
+            />
+            <Route 
+              path="/products" 
+              element={<ProductsPage theme={theme} />} 
             />
             <Route 
               path="/chat" 

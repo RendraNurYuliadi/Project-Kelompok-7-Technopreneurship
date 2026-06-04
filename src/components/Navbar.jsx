@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import logo from './OurTeam/Icon2.png'
 
 const links = ['Home','About','Team','Services','Projects','Technologies','FAQ','Contact']
 
@@ -45,8 +46,8 @@ export default function Navbar({ theme, setTheme }){
       className="fixed w-full z-40 top-4 px-6">
       <nav className="max-w-6xl mx-auto flex items-center justify-between glass rounded-2xl py-3 px-4 shadow-glass backdrop-blur">
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/10">
-            <span className="font-bold">DS</span>
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+            <img src={logo} alt="Logo" className="w-full h-full object-cover" />
           </div>
           <div className="hidden md:block">
             <ul className="flex gap-6 text-sm items-center">

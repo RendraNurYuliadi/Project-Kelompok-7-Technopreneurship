@@ -56,7 +56,7 @@ export default function AudioPlayer({ showSplash }) {
         aria-label={playing ? 'Pause background audio' : 'Play background audio'}
         type="button"
       >
-        {playing ? '⏸' : '▶'}
+        <span className="material-symbols-outlined text-xl">{playing ? 'volume_up' : 'volume_off'}</span>
       </button>
     </div>
   )
