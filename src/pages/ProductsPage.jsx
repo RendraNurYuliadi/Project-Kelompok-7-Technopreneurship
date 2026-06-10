@@ -15,7 +15,9 @@ import EventWebImg from '../components/OurTeam/Service/Event Web.png'
 import InvitationWebImg from '../components/OurTeam/Service/Invitation Web.png'
 import WebScrapImg from '../components/OurTeam/Service/Web Scrap.png'
 import ECommerceImg from '../components/OurTeam/Service/E-Commers Data Scrap.png'
+import ScrapingCleaningImg from '../components/OurTeam/Service/Scraping + Cleaning Data.png'
 import SurveyImg from '../components/OurTeam/Service/Survei Automation - G Form.png'
+import BannerEventImg from '../components/OurTeam/Service/Banner-Event.png'
 
 const categories = [
   {
@@ -25,36 +27,43 @@ const categories = [
       {
         title: 'Poster Canva',
         image: CanvaImg,
-        oldPrice: 'Rp40.000/desain',
-        price: 'Rp30.000/desain',
+        oldPrice: 'Rp140.000/desain',
+        price: 'Rp30.000 - Rp100.000/desain',
         description: 'Desain poster promosi, informasi acara, atau kebutuhan pemasaran digital dengan tampilan menarik dan komunikatif.'
       },
       {
         title: 'Instagram Feed Design',
         image: InstagramImg,
-        oldPrice: 'Rp35.000/post',
-        price: 'Rp25.000/post',
+        oldPrice: 'Rp100.000/post',
+        price: 'Rp25.000 - Rp75.000/post',
         description: 'Desain konten Instagram berbentuk feed atau carousel untuk meningkatkan engagement dan memperkuat identitas brand.'
+      },
+      {
+        title: 'Banner Event',
+        image: BannerEventImg,
+        oldPrice: 'Rp200.000/desain',
+        price: 'Rp50.000 - Rp150.000/desain',
+        description: 'Desain banner acara yang menarik perhatian untuk meningkatkan promosi dan engagement di berbagai media.'
       },
       {
         title: 'Thumbnail YouTube',
         image: DesignImg,
-        oldPrice: 'Rp35.000/desain',
-        price: 'Rp25.000/desain',
+        oldPrice: 'Rp100.000/desain',
+        price: 'Rp20.000 - Rp75.000/desain',
         description: 'Thumbnail profesional yang dirancang untuk menarik perhatian audiens dan meningkatkan click-through rate (CTR).'
       },
       {
         title: 'CV / Portfolio',
         image: CVPortfolioImg,
-        oldPrice: 'Rp75.000/file',
-        price: 'Rp50.000/file',
+        oldPrice: 'Rp200.000/file',
+        price: 'Rp50.000 - Rp150.000/file',
         description: 'Pembuatan CV ATS-friendly dan portofolio profesional yang rapi, modern, dan siap digunakan untuk melamar kerja atau magang.'
       },
       {
         title: 'Figma Design',
         image: FigmaImg,
-        oldPrice: 'Rp70.000/page',
-        price: 'Rp50.000/page',
+        oldPrice: 'Rp700.000/page',
+        price: 'Rp150.000 - Rp500.000/page',
         description: 'Desain antarmuka website atau aplikasi menggunakan Figma dengan fokus pada user experience dan tampilan modern.'
       }
     ],
@@ -68,36 +77,36 @@ const categories = [
       {
         title: 'Company Profile',
         image: CompanyProfileImg,
-        oldPrice: 'Rp650.000/website',
-        price: 'Rp500.000/website',
+        oldPrice: 'Rp6.000.000/website',
+        price: 'Rp1.000.000 - Rp5.000.000/website',
         description: 'Website profesional untuk memperkenalkan perusahaan, layanan, visi misi, dan informasi kontak.'
       },
       {
         title: 'Landing Page',
         image: LandingPageImg,
-        oldPrice: 'Rp400.000/website',
-        price: 'Rp300.000/website',
+        oldPrice: 'Rp3.000.000/website',
+        price: 'Rp500.000 - Rp2.000.000/website',
         description: 'Halaman promosi tunggal yang dirancang untuk meningkatkan konversi produk, jasa, atau kampanye tertentu.'
       },
       {
-        title: 'Portfolio Site',
+        title: 'Portfolio Website',
         image: PortfolioSiteImg,
-        oldPrice: 'Rp450.000/website',
-        price: 'Rp350.000/website',
+        oldPrice: 'Rp3.500.000/website',
+        price: 'Rp750.000 - Rp2.500.000/website',
         description: 'Website personal untuk menampilkan profil, pengalaman, proyek, dan karya profesional.'
       },
       {
-        title: 'Event Website',
+        title: 'Website UMKM',
         image: EventWebImg,
-        oldPrice: 'Rp550.000/website',
-        price: 'Rp450.000/website',
-        description: 'Website khusus acara yang memuat informasi kegiatan, jadwal, lokasi, dan formulir pendaftaran.'
+        oldPrice: 'Rp6.000.000/website',
+        price: 'Rp1.500.000 - Rp5.000.000/website',
+        description: 'Website lengkap untuk UMKM yang mencakup showcase produk, informasi bisnis, dan saluran komunikasi dengan pelanggan.'
       },
       {
-        title: 'Invitation Website',
+        title: 'Web Undangan',
         image: InvitationWebImg,
-        oldPrice: 'Rp380.000/website',
-        price: 'Rp300.000/website',
+        oldPrice: 'Rp1.000.000/website',
+        price: 'Rp200.000 - Rp750.000/website',
         description: 'Undangan digital interaktif untuk acara seperti pernikahan, ulang tahun, atau kegiatan lainnya.'
       }
     ],
@@ -109,24 +118,31 @@ const categories = [
     description: 'Layanan pengumpulan, pengolahan, dan otomatisasi data untuk kebutuhan riset, analisis, dan pengambilan keputusan.',
     products: [
       {
-        title: 'Website Scraping',
+        title: 'Scraping Website Sederhana',
         image: WebScrapImg,
-        oldPrice: 'Rp75.000/100 data',
-        price: 'Rp50.000/100 data',
+        oldPrice: 'Rp600.000/project',
+        price: 'Rp100.000 - Rp500.000',
         description: 'Pengambilan data otomatis dari website tertentu dan diekspor ke format yang mudah digunakan.'
       },
       {
-        title: 'E-Commerce Data',
+        title: 'Scraping E-Commerce',
         image: ECommerceImg,
-        oldPrice: 'Rp80.000/100 produk',
-        price: 'Rp60.000/100 produk',
+        oldPrice: 'Rp1.600.000/project',
+        price: 'Rp300.000 - Rp1.500.000',
         description: 'Pengumpulan data produk marketplace seperti nama produk, harga, rating, dan informasi pendukung lainnya.'
       },
       {
-        title: 'Google Form Survey Automation',
+        title: 'Scraping + Cleaning Data',
+        image: ScrapingCleaningImg,
+        oldPrice: 'Rp2.200.000/project',
+        price: 'Rp500.000 - Rp2.000.000',
+        description: 'Pengumpulan dan pembersihan data agar output siap analisis dengan kualitas lebih baik dan lebih mudah diproses.'
+      },
+      {
+        title: 'Automation Survey',
         image: SurveyImg,
-        oldPrice: 'Rp150.000/setup',
-        price: 'Rp100.000/setup',
+        oldPrice: 'Rp1.600.000/project',
+        price: 'Rp300.000 - Rp1.500.000',
         description: 'Pembuatan sistem survei berbasis Google Form yang terintegrasi dengan Google Sheets untuk pengumpulan dan pengelolaan data yang lebih efisien.'
       }
     ],

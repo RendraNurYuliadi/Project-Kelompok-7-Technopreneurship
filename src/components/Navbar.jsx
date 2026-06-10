@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import logo from './OurTeam/Icon2.png'
 
@@ -60,8 +61,11 @@ export default function Navbar({ theme, setTheme }){
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button onClick={toggleTheme} className="p-2 rounded-full glass border border-white/10 text-silver hover:text-white transition" aria-label="toggle theme">
+        <div className="flex items-center gap-3">
+          <Link to="/products" className="inline-flex items-center justify-center w-10 h-10 rounded-full glass border border-white/10 text-silver hover:text-white transition" aria-label="products page">
+            <span className="material-symbols-outlined">shopping_bag</span>
+          </Link>
+          <button onClick={toggleTheme} className="inline-flex items-center justify-center w-10 h-10 rounded-full glass border border-white/10 text-silver hover:text-white transition" aria-label="toggle theme">
             {theme === 'dark' ? '☀️' : '🌙'}
           </button>
           <button className="md:hidden p-2" onClick={()=>setOpen(v=>!v)} aria-label="menu">

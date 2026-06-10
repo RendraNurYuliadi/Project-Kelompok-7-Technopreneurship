@@ -6,6 +6,7 @@ import InstagramImg from './OurTeam/Service/Instagram Feed Design.png'
 import DesignImg from './OurTeam/Service/Thubnail YTB.png'
 import CVPortfolioImg from './OurTeam/Service/CV  Portofolio.png'
 import FigmaImg from './OurTeam/Service/Figma Design.png'
+import BannerEventImg from './OurTeam/Service/Banner-Event.png'
 import CompanyProfileImg from './OurTeam/Service/Company Profile.png'
 import LandingPageImg from './OurTeam/Service/Landing Page Web.png'
 import PortfolioSiteImg from './OurTeam/Service/Portofolio Site Web.png'
@@ -13,6 +14,7 @@ import EventWebImg from './OurTeam/Service/Event Web.png'
 import InvitationWebImg from './OurTeam/Service/Invitation Web.png'
 import WebScrapImg from './OurTeam/Service/Web Scrap.png'
 import ECommerceImg from './OurTeam/Service/E-Commers Data Scrap.png'
+import ScrapingCleaningImg from './OurTeam/Service/Scraping + Cleaning Data.png'
 import SurveyImg from './OurTeam/Service/Survei Automation - G Form.png'
 
 export default function Order({ theme }) {
@@ -28,23 +30,25 @@ export default function Order({ theme }) {
 
   const services = {
     'Design Services': [
-      { name: 'Poster Canva', image: CanvaImg, oldPrice: 'Rp40.000/desain', price: 'Rp30.000/desain' },
-      { name: 'Banner Instagram / event', image: InstagramImg, oldPrice: 'Rp35.000/post', price: 'Rp25.000/post' },
-      { name: 'Thumbnail YouTube', image: DesignImg, oldPrice: 'Rp35.000/desain', price: 'Rp25.000/desain' },
-      { name: 'CV / portofolio', image: CVPortfolioImg, oldPrice: 'Rp75.000/file', price: 'Rp50.000/file' },
-      { name: 'Figma product design', image: FigmaImg, oldPrice: 'Rp70.000/page', price: 'Rp50.000/page' }
+      { name: 'Poster Canva', image: CanvaImg, oldPrice: 'Rp140.000/desain', price: 'Rp30.000 - Rp100.000/desain' },
+      { name: 'Instagram Feed Design', image: InstagramImg, oldPrice: 'Rp100.000/post', price: 'Rp25.000 - Rp75.000/post' },
+      { name: 'Banner Event', image: BannerEventImg, oldPrice: 'Rp200.000/desain', price: 'Rp50.000 - Rp150.000/desain' },
+      { name: 'Thumbnail YouTube', image: DesignImg, oldPrice: 'Rp100.000/desain', price: 'Rp20.000 - Rp75.000/desain' },
+      { name: 'CV / Portfolio', image: CVPortfolioImg, oldPrice: 'Rp200.000/file', price: 'Rp50.000 - Rp150.000/file' },
+      { name: 'Figma Design', image: FigmaImg, oldPrice: 'Rp700.000/page', price: 'Rp150.000 - Rp500.000/page' }
     ],
     'Web Development': [
-      { name: 'Website portfolio', image: PortfolioSiteImg, oldPrice: 'Rp450.000/website', price: 'Rp350.000/website' },
-      { name: 'Website undangan', image: InvitationWebImg, oldPrice: 'Rp380.000/website', price: 'Rp300.000/website' },
-      { name: 'Landing page event', image: LandingPageImg, oldPrice: 'Rp400.000/website', price: 'Rp300.000/website' },
-      { name: 'Profil usaha kecil / Company Profile', image: CompanyProfileImg, oldPrice: 'Rp650.000/website', price: 'Rp500.000/website' }
+      { name: 'Company Profile', image: CompanyProfileImg, oldPrice: 'Rp6.000.000/website', price: 'Rp1.000.000 - Rp5.000.000/website' },
+      { name: 'Landing Page', image: LandingPageImg, oldPrice: 'Rp3.000.000/website', price: 'Rp500.000 - Rp2.000.000/website' },
+      { name: 'Portfolio Website', image: PortfolioSiteImg, oldPrice: 'Rp3.500.000/website', price: 'Rp750.000 - Rp2.500.000/website' },
+      { name: 'Website UMKM', image: EventWebImg, oldPrice: 'Rp6.000.000/website', price: 'Rp1.500.000 - Rp5.000.000/website' },
+      { name: 'Web Undangan', image: InvitationWebImg, oldPrice: 'Rp1.000.000/website', price: 'Rp200.000 - Rp750.000/website' }
     ],
     'Data & Scraping': [
-      { name: 'Data scraping e-commerce', image: ECommerceImg, oldPrice: 'Rp80.000/100 produk', price: 'Rp60.000/100 produk' },
-      { name: 'Scraping website/katalog', image: WebScrapImg, oldPrice: 'Rp75.000/100 data', price: 'Rp50.000/100 data' },
-      { name: 'Pengumpulan data riset', image: WebScrapImg, oldPrice: 'Rp120.000/project', price: 'Rp100.000/project' },
-      { name: 'Survey respondent service', image: SurveyImg, oldPrice: 'Rp150.000/setup', price: 'Rp100.000/setup' }
+      { name: 'Scraping Website Sederhana', image: WebScrapImg, oldPrice: 'Rp600.000/project', price: 'Rp100.000 - Rp500.000' },
+      { name: 'Scraping E-Commerce', image: ECommerceImg, oldPrice: 'Rp1.600.000/project', price: 'Rp300.000 - Rp1.500.000' },
+      { name: 'Scraping + Cleaning Data', image: ScrapingCleaningImg, oldPrice: 'Rp2.200.000/project', price: 'Rp500.000 - Rp2.000.000' },
+      { name: 'Automation Survey', image: SurveyImg, oldPrice: 'Rp1.600.000/project', price: 'Rp300.000 - Rp1.500.000' }
     ]
   }
 

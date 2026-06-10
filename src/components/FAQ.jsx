@@ -3,11 +3,16 @@ import { motion } from 'framer-motion'
 import BackgroundParticles from './BackgroundParticles'
 
 const faqs = [
-  {q:'Layanan apa saja?', a:'Design, Web Development, Data & Scraping, Automation, dan lainnya.'},
-  {q:'Apakah bisa custom?', a:'Ya, kami menerima request custom sesuai kebutuhan.'},
-  {q:'Apakah menerima UMKM?', a:'Ya, paket khusus untuk UMKM tersedia.'},
-  {q:'Apakah support revisi?', a:'Termasuk revisi terbatas sesuai paket.'},
-  {q:'Bagaimana sistem order?', a:'Kontak via form atau WhatsApp, kami akan follow up.'}
+  {q:'Layanan apa saja yang tersedia?', a:'Digisolve Studio menyediakan layanan Design Services, Web Development, serta Data & Scraping untuk kebutuhan bisnis, UMKM, dan mahasiswa.'},
+  {q:'Apakah bisa menerima custom order?', a:'Ya. Setiap layanan dapat disesuaikan dengan kebutuhan, tujuan, dan preferensi klien melalui sistem custom order.'},
+  {q:'Apakah menerima proyek dari UMKM?', a:'Tentu. Kami mendukung UMKM dan bisnis lokal yang ingin meningkatkan branding, pemasaran, maupun digitalisasi usaha.'},
+  {q:'Apakah tersedia layanan pembuatan website?', a:'Ya. Kami melayani pembuatan company profile, landing page, portfolio website, event website, dan invitation website.'},
+  {q:'Apakah bisa membantu desain media sosial?', a:'Ya. Kami menyediakan desain Instagram Feed, poster promosi, banner event, thumbnail YouTube, dan berbagai kebutuhan visual lainnya.'},
+  {q:'Apakah layanan data scraping tersedia untuk riset?', a:'Ya. Kami menyediakan layanan website scraping, e-commerce data scraping, data cleaning, dan otomatisasi pengumpulan data.'},
+  {q:'Apakah proyek mendapatkan revisi?', a:'Ya. Klien dapat memberikan feedback selama proses review, dan revisi akan dilakukan sesuai kesepakatan proyek.'},
+  {q:'Bagaimana proses pemesanan layanan?', a:'Klien dapat menghubungi kami melalui formulir kontak atau WhatsApp, kemudian tim kami akan melakukan follow up untuk diskusi kebutuhan proyek.'},
+  {q:'Berapa lama pengerjaan proyek?', a:'Durasi pengerjaan menyesuaikan jenis dan kompleksitas proyek. Estimasi waktu akan diberikan setelah brief dan kebutuhan diterima.'},
+  {q:'Bagaimana cara berkonsultasi sebelum order?', a:'Anda dapat menghubungi tim Digisolve Studio melalui WhatsApp atau email untuk konsultasi awal mengenai kebutuhan layanan yang diinginkan.'}
 ]
 
 export default function FAQ({ theme }){
@@ -24,7 +29,7 @@ export default function FAQ({ theme }){
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-3xl font-bold">FAQ</h2>
-            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-xl">Pertanyaan umum seputar layanan, custom order, UMKM, dan proses revisi.</p>
+            <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-xl">Jawaban atas pertanyaan umum mengenai layanan, custom order, UMKM, website, desain media sosial, scraping, revisi, dan pemesanan.</p>
           </div>
         </div>
 

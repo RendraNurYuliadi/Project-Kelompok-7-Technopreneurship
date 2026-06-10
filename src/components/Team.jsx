@@ -91,7 +91,7 @@ export default function Team({ theme }){
       <BackgroundParticles theme={theme} />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold">Our Team</h2>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {members.map((m, idx)=> (
             <motion.div 
               key={m.name}
@@ -101,7 +101,7 @@ export default function Team({ theme }){
               className="glass p-4 rounded-2xl text-center cursor-pointer transition shadow-lg hover:shadow-2xl group"
               onClick={() => setSelectedMember(m)}
             >
-              <img src={m.img} alt={m.name} className="w-24 h-24 rounded-full mx-auto object-cover" />
+              <img src={m.img} alt={m.name} className="w-36 h-36 sm:w-40 sm:h-40 rounded-full mx-auto object-cover" />
               <h4 className="mt-3 font-semibold">{m.name}</h4>
               <div className="text-slate-400 text-sm">{m.role}</div>
               <motion.div 

@@ -14,7 +14,7 @@ const services = [
     description:'Desain visual untuk kebutuhan digital dan cetak dengan pendekatan brand-ready dan modern.',
     image: DesignServices,
     ctaLink:'/products',
-    items:['Poster Canva', 'Instagram Feed Design', 'Thumbnail YouTube', 'CV / portofolio', 'Figma design']
+    items:['Poster Canva', 'Instagram Feed Design', 'Banner Event', 'Thumbnail YouTube', 'CV / portofolio', 'Figma design']
   },
   {
     title:'Web Development',
@@ -28,7 +28,7 @@ const services = [
     description:'Pengumpulan dan pengolahan data otomatis untuk riset, analisis, dan laporan bisnis.',
     image: DataScraping,
     ctaLink:'/products',
-    items:['Website scraping', 'E-commerce data', 'G-Form Survey automation']
+    items:['Website scraping', 'E-commerce data','Scraping + Cleaning Data' , 'G-Form Survey automation']
   }
 ]
 

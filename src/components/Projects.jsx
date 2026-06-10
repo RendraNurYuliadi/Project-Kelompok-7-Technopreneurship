@@ -8,6 +8,26 @@ import HydraImg from './OurTeam/Service/Hydra Landing Page.png'
 import DekingImg from './OurTeam/Service/Deking.png'
 import SDIImg from './OurTeam/Service/SDI.png'
 import ChitaTravelImg from './OurTeam/Service/NusaTravel.png'
+import CVImg from './OurTeam/Service/CV1.png'
+import PosterFoodsImg from './OurTeam/Service/Poster Foods.jpeg'
+import PosterIdul1Img from './OurTeam/Service/Poster Idul Adha.jpeg'
+import PosterIdul2Img from './OurTeam/Service/Poster Idul Adha2.jpeg'
+import PosterKartini1Img from './OurTeam/Service/Poster Hari Kartini.jpeg'
+import PosterKartini2Img from './OurTeam/Service/Poster Hari Kartini2.jpeg'
+import ThumbnailImg from './OurTeam/Service/thubnail.png'
+import RapatKerjaImg from './OurTeam/Service/Rapat Kerja.png'
+import FamilyGatheringImg from './OurTeam/Service/Family Gathering.png'
+import PromosiVillaImg from './OurTeam/Service/Promosi Villa.png'
+import CVTemplate from './OurTeam/Service/Template CV II.pdf'
+import PosterFoodsFile from './OurTeam/Service/Poster Foods.jpeg'
+import PosterIdul1File from './OurTeam/Service/Poster Idul Adha.jpeg'
+import PosterIdul2File from './OurTeam/Service/Poster Idul Adha2.jpeg'
+import PosterKartini1File from './OurTeam/Service/Poster Hari Kartini.jpeg'
+import PosterKartini2File from './OurTeam/Service/Poster Hari Kartini2.jpeg'
+import ThumbnailFile from './OurTeam/Service/thubnail.png'
+import RapatKerjaFile from './OurTeam/Service/Rapat Kerja.png'
+import FamilyGatheringFile from './OurTeam/Service/Family Gathering.png'
+import PromosiVillaFile from './OurTeam/Service/Promosi Villa.png'
 
 const projectScrollbarStyles = `
   .project-modal::-webkit-scrollbar {
@@ -35,15 +55,27 @@ const sample = [
   {title:'Travel Website', tag:'travel', img:TravelImg, services:['Design Services','Web Development'], description:'Landing page travel dengan storytelling visual.', figmaUrl:'https://www.figma.com/design/OUxGCwC6CvKzUAMJrzOeTI/Travel-Website-Landing-Page?node-id=0-1&t=8uUA56C3hb0JCw1a-1'},
   {title:'Event Website', tag:'event', img:HydraImg, services:['Web Development'], description:'Website event dengan informasi, jadwal, dan RSVP.', figmaUrl:'https://www.figma.com/design/6vuvT8TLLVT6VPs1N42jmv/Event-Landing-Page?node-id=0-1&t=A2OzQFyJ8hg3b9U8-1'},
   {title:'Deking', tag:'saas', img:DekingImg, services:['Web Development'], description:'Konsep startup lab teknologi untuk produk digital.', figmaUrl:'https://www.figma.com/design/LPmGLucvCe0r0km0lCn11f/Deking-TechLab?node-id=67-481&t=YDv7z7HVNKUsAGAE-1', websiteUrl:'https://deking-tech-lab.vercel.app/'},
-  {title:'Sumedang Digital Solution', tag:'agency', img:SDIImg, services:['Web Development','Design Services'], description:'Solusi digital untuk memperkuat brand lokal Sumedang.', figmaUrl:'https://www.figma.com/design/Kf6FMfp20covdVgx8lYDbx/Prototype---Sumedang-Digital-Solution?node-id=14-10&t=aFJvJYev3Vesqo13-1'}
+  {title:'Sumedang Digital Solution', tag:'agency', img:SDIImg, services:['Web Development','Design Services'], description:'Solusi digital untuk memperkuat brand lokal Sumedang.', figmaUrl:'https://www.figma.com/design/Kf6FMfp20covdVgx8lYDbx/Prototype---Sumedang-Digital-Solution?node-id=14-10&t=aFJvJYev3Vesqo13-1'},
+  {title:'Professional Resume Template', tag:'tools', img:CVImg, services:['Template Design'], description:'Template CV profesional yang elegan dan modern untuk meningkatkan kesan pertama karir Anda.', downloadUrl:CVTemplate, fileName:'Template CV II.pdf'},
+  {title:'Festival Foods Design', tag:'posters', img:PosterFoodsImg, services:['Poster Design'], description:'Desain poster menarik untuk promosi festival kuliner dan produk makanan.', downloadUrl:PosterFoodsFile, fileName:'Poster Foods.jpeg'},
+  {title:'Idul Adha Design Series Vol. 1', tag:'posters', img:PosterIdul1Img, services:['Poster Design'], description:'Desain poster Idul Adha yang elegan dengan nuansa tradisional dan modern.', downloadUrl:PosterIdul1File, fileName:'Poster Idul Adha.jpeg'},
+  {title:'Idul Adha Design Series Vol. 2', tag:'posters', img:PosterIdul2Img, services:['Poster Design'], description:'Variasi desain Idul Adha yang segar dengan visual yang memukau.', downloadUrl:PosterIdul2File, fileName:'Poster Idul Adha2.jpeg'},
+  {title:'Women\'s History Tribute Vol. 1', tag:'posters', img:PosterKartini1Img, services:['Poster Design'], description:'Poster Hari Kartini yang menginspirasi dengan pesan pemberdayaan perempuan.', downloadUrl:PosterKartini1File, fileName:'Poster Hari Kartini.jpeg'},
+  {title:'Women\'s History Tribute Vol. 2', tag:'posters', img:PosterKartini2Img, services:['Poster Design'], description:'Desain alternatif Hari Kartini dengan konsep visual yang unik dan bermakna.', downloadUrl:PosterKartini2File, fileName:'Poster Hari Kartini2.jpeg'},
+  {title:'YouTube Thumbnail Kit', tag:'graphics', img:ThumbnailImg, services:['Graphic Design'], description:'Koleksi template thumbnail YouTube profesional yang siap tingkatkan CTR konten Anda.', downloadUrl:ThumbnailFile, fileName:'Thumbnail.png'},
+  {title:'Corporate Meeting Showcase', tag:'banners', img:RapatKerjaImg, services:['Photography', 'Banner Design'], description:'Dokumentasi profesional rapat kerja dengan visual yang menangkap momen penting tim.', downloadUrl:RapatKerjaFile, fileName:'Rapat Kerja.png'},
+  {title:'Family Reunion Celebration', tag:'banners', img:FamilyGatheringImg, services:['Photography', 'Banner Design'], description:'Momen kebersamaan keluarga yang diabadikan dengan sentuhan desain yang hangat dan bermakna.', downloadUrl:FamilyGatheringFile, fileName:'Family Gathering.png'},
+  {title:'Promosi Villa Eksklusif', tag:'banners', img:PromosiVillaImg, services:['Property Marketing', 'Banner Design'], description:'Showcase villa premium dengan visual yang memukau dan menonjolkan setiap kenyamanan fasilitas mewah.', downloadUrl:PromosiVillaFile, fileName:'Promosi Villa.png'}
 ]
 
-const tags = ['all','ecommerce','travel','event','saas','agency']
+const tags = ['all','ecommerce','travel','event','saas','agency','tools','posters','graphics','banners']
 
 export default function Projects(){
   const [filter,setFilter] = useState('all')
   const [selectedProject, setSelectedProject] = useState(null)
+  const [showAll, setShowAll] = useState(false)
   const list = sample.filter(p=> filter==='all' || p.tag===filter)
+  const visibleList = showAll ? list : list.slice(0, 6)
 
   return (
     <>
@@ -67,7 +99,7 @@ export default function Projects(){
 
         <motion.div layout className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           <AnimatePresence>
-            {list.map((p, idx)=> (
+            {visibleList.map((p, idx)=> (
               <motion.div key={p.title} layout initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} exit={{opacity:0,y:20}} transition={{duration:0.35,delay:idx * 0.05}} data-aos="fade-up" className="rounded-[1.75rem] overflow-hidden glass shadow-glass border border-white/10 group cursor-pointer" onClick={() => setSelectedProject(p)}>
                 <div className="relative h-56 overflow-hidden">
                   <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -80,14 +112,22 @@ export default function Projects(){
                   <div className="mt-4 flex flex-wrap gap-2 text-[0.75rem]">
                     {p.figmaUrl && <span className="rounded-full border border-white/10 px-3 py-1 text-slate-300">Figma</span>}
                     {p.websiteUrl && <span className="rounded-full border border-white/10 px-3 py-1 text-slate-300">Web</span>}
+                    {p.downloadUrl && <span className="rounded-full border border-white/10 px-3 py-1 text-slate-300">Download</span>}
                   </div>
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <a href={p.figmaUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-slate-200 transition">
-                      View on Figma <span className="material-symbols-outlined text-base">arrow_outward</span>
-                    </a>
+                    {p.figmaUrl && (
+                      <a href={p.figmaUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-slate-200 transition">
+                        View on Figma <span className="material-symbols-outlined text-base">arrow_outward</span>
+                      </a>
+                    )}
                     {p.websiteUrl && (
                       <a href={p.websiteUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-slate-200 transition">
                         Open Web <span className="material-symbols-outlined text-base">arrow_outward</span>
+                      </a>
+                    )}
+                    {p.downloadUrl && (
+                      <a href={p.downloadUrl} download={p.fileName} onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-slate-200 transition">
+                        Download <span className="material-symbols-outlined text-base">download</span>
                       </a>
                     )}
                   </div>
@@ -96,6 +136,18 @@ export default function Projects(){
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {list.length > 4 && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-slate-100"
+            >
+              {showAll ? 'Show Less' : 'Show All Projects'}
+              <span className="material-symbols-outlined text-base">{showAll ? 'expand_less' : 'expand_more'}</span>
+            </button>
+          </div>
+        )}
 
         {/* Project Modal */}
         <AnimatePresence>
@@ -157,18 +209,31 @@ export default function Projects(){
                           Web
                         </span>
                       )}
+                      {selectedProject.downloadUrl && (
+                        <span className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300">
+                          Download
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <a href={selectedProject.figmaUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-sm font-semibold text-white hover:bg-slate-900/80 transition">
-                      <span className="material-symbols-outlined text-base">design_services</span>
-                      View on Figma
-                    </a>
+                    {selectedProject.figmaUrl && (
+                      <a href={selectedProject.figmaUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-sm font-semibold text-white hover:bg-slate-900/80 transition">
+                        <span className="material-symbols-outlined text-base">design_services</span>
+                        View on Figma
+                      </a>
+                    )}
                     {selectedProject.websiteUrl && (
                       <a href={selectedProject.websiteUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-sm font-semibold text-white hover:bg-slate-900/80 transition">
                         <span className="material-symbols-outlined text-base">language</span>
                         Visit Website
+                      </a>
+                    )}
+                    {selectedProject.downloadUrl && (
+                      <a href={selectedProject.downloadUrl} download={selectedProject.fileName} className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/50 border border-white/10 text-sm font-semibold text-white hover:bg-slate-900/80 transition">
+                        <span className="material-symbols-outlined text-base">download</span>
+                        Download Template
                       </a>
                     )}
                   </div>
